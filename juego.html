@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function Jugador(nombre) {
+            this.nombre = nombre;
+            this.pv = 100;
+            this.sp = 100;
+
+            this.curar = function (jugadorObjetivo) {
+                if (this.sp >= 40) {
+                    this.sp -= 40;
+                    jugadorObjetivo.pv += 20;
+                }  else {
+                    console.log(this.nombre  + "No tiene SP");
+                }
+                this.estado(jugadorObjetivo);
+            }
+
+            this.tirarFlecha = function (jugadorObjetivo) {
+                if (jugadorObjetivo > 40) {
+                    jugadorObjetivo.pv -= 40;
+                }  else {
+                    jugadorObjetivo = 0;
+                    console.log(jugadorObjetivo.nombre + " murio")
+                }
+
+                this.estado(jugadorObjetivo);
+            }
+
+            this.estado = function (jugadorObjetivo) {
+                console.log(this);
+                console.log(jugadorObjetivo)
+            }
+        }
+
+        var gandalf = new Jugador("Gandalf");
+        var legolas = new Jugador("Legolas");
+
+        console.log(gandalf);
+        console.log(legolas);
+
+        gandalf.curar(legolas);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

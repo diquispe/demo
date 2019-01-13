@@ -1,0 +1,12 @@
+{
+  "name": "ejemplo",
+  "version": "0.1.0",
+  "description": "Aplicacionpara compaetir fotos",
+  "main": "server.js",
+  "keywords": [
+    "aplicacion",
+    "javascript"
+  ],
+  "author": "Diego",
+  "license": "MIT"
+}
